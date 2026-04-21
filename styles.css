@@ -1381,6 +1381,7 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
   :root { --section-pad: 70px 0; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
+  #navCTA { display: none; }
 
   .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
   .hero-img-wrapper { width: 280px; height: 280px; }
