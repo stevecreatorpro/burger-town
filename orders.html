@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Execution — Burger Town</title>
+  <meta name="description" content="Track and manage your verified paid orders at Burger Town.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="orders.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.min.css">
+</head>
+<body class="orders-page">
+
+  <!-- ============================================================
+       ORDERS NAVBAR
+       ============================================================ -->
+  <nav class="orders-nav">
+    <div class="container orders-nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🍔</span>
+        Burger<span class="text-yellow">Town</span>
+      </a>
+      <h1 class="orders-title">
+        <i class="ri-file-list-3-line"></i> Order Execution Dashboard
+      </h1>
+      <a href="index.html" class="btn btn-primary">
+        <i class="ri-shopping-cart-line"></i> Order More
+      </a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       ORDERS MAIN
+       ============================================================ -->
+  <main class="orders-main">
+    <div class="container">
+
+      <!-- Filter & Search -->
+      <div class="orders-controls">
+        <div class="search-box">
+          <i class="ri-search-line"></i>
+          <input type="text" id="searchOrders" placeholder="Search by order ID, phone, or name...">
+        </div>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All Orders</button>
+          <button class="filter-btn" data-filter="pending">Pending</button>
+          <button class="filter-btn" data-filter="processing">Processing</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div class="orders-empty" id="ordersEmpty" style="display: none;">
+        <div class="empty-icon">🍴</div>
+        <h3>No verified orders yet</h3>
+        <p>Your confirmed and verified orders will appear here</p>
+        <a href="index.html" class="btn btn-primary">
+          <i class="ri-shopping-cart-line"></i> Start Ordering
+        </a>
+      </div>
+
+      <!-- Orders Grid -->
+      <div class="orders-grid" id="ordersGrid">
+        <!-- Populated by JavaScript -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============================================================
+       ORDER DETAIL MODAL
+       ============================================================ -->
+  <div class="modal-overlay" id="orderModal" style="display: none;">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">
+        <i class="ri-close-line"></i>
+      </button>
+
+      <div class="order-detail-header">
+        <div class="order-detail-title">
+          <h2 id="modalOrderId">Order #BT-20260420-0001</h2>
+          <span class="order-status-badge" id="modalOrderStatus">pending</span>
+        </div>
+        <p id="modalOrderTime" class="order-time">Ordered on April 20, 2026 at 2:30 PM</p>
+      </div>
+
+      <div class="order-detail-grid">
+        <!-- Customer Info Section -->
+        <div class="detail-section">
+          <h3>
+            <i class="ri-user-3-line"></i> Customer Information
+          </h3>
+          <div class="detail-row">
+            <label>Full Name</label>
+            <p id="modalCustomerName">John Doe</p>
+          </div>
+          <div class="detail-row">
+            <label>Email Address</label>
+            <p id="modalCustomerEmail">john@example.com</p>
+          </div>
+          <div class="detail-row">
+            <label>Phone Number</label>
+            <p id="modalCustomerPhone">08012345678</p>
+          </div>
+        </div>
+
+        <!-- Delivery Info Section -->
+        <div class="detail-section">
+          <h3>
+            <i class="ri-truck-line"></i> Delivery Information
+          </h3>
+          <div class="detail-row">
+            <label>Delivery Method</label>
+            <p id="modalDeliveryType" class="capitalize">pickup</p>
+          </div>
+          <div class="detail-row" id="addressRow" style="display: none;">
+            <label>Delivery Address</label>
+            <p id="modalDeliveryAddress">123 Main Street, Phase 2</p>
+          </div>
+          <div class="detail-row" id="landmarkRow" style="display: none;">
+            <label>Landmark</label>
+            <p id="modalDeliveryLandmark">Near Total Filling Station</p>
+          </div>
+          <div class="detail-row" id="notesRow" style="display: none;">
+            <label>Delivery Notes</label>
+            <p id="modalDeliveryNotes">Call when you arrive</p>
+          </div>
+        </div>
+
+        <!-- Items Section -->
+        <div class="detail-section full-width">
+          <h3>
+            <i class="ri-shopping-bag-3-line"></i> Items Ordered
+          </h3>
+          <div class="items-list" id="modalItems">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Payment Info Section -->
+        <div class="detail-section">
+          <h3>
+            <i class="ri-bank-card-line"></i> Payment Information
+          </h3>
+          <div class="detail-row">
+            <label>Payment Method</label>
+            <p id="modalPaymentMethod" class="capitalize">paystack</p>
+          </div>
+          <div class="detail-row">
+            <label>Payment Status</label>
+            <p id="modalPaymentStatus" class="badge badge-success">Verified</p>
+          </div>
+          <div class="detail-row">
+            <label>Reference Number</label>
+            <p id="modalPaymentRef" class="mono">BT_1234567890_ABC</p>
+          </div>
+        </div>
+
+        <!-- Pricing Section -->
+        <div class="detail-section">
+          <h3>
+            <i class="ri-receipt-line"></i> Order Summary
+          </h3>
+          <div class="pricing-breakdown">
+            <div class="price-row">
+              <span>Subtotal</span>
+              <strong id="modalSubtotal">₦5,000</strong>
+            </div>
+            <div class="price-row">
+              <span>Delivery Fee</span>
+              <strong id="modalDeliveryFee">₦500</strong>
+            </div>
+            <div class="price-row total">
+              <span>Total Amount</span>
+              <strong id="modalTotal">₦5,500</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-detail-actions">
+        <button class="btn btn-secondary" id="modalClose2">Close</button>
+        <a href="index.html" class="btn btn-primary">
+          <i class="ri-shopping-cart-line"></i> Order Again
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="cart.js"></script>
+  <script src="orders.js"></script>
+</body>
+</html>

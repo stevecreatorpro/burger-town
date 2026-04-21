@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger Town — Kuje, Abuja | Crispy Chicken, Smash Burgers & Creamy Shakes</title>
+  <meta name="description" content="Burger Town serves Kuje, Abuja's tastiest crispy golden fried chicken, smash burgers, and thick creamy milkshakes. Order now for dine-in, takeaway, or delivery.">
+  <meta name="keywords" content="Burger Town, Kuje Abuja, fast food, fried chicken, burgers, milkshakes, delivery, Abuja restaurant">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Burger Town — Kuje, Abuja">
+  <meta property="og:description" content="Crispy golden fried chicken, loaded smash burgers, and thick creamy shakes. Kuje's #1 fast-food spot.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon (emoji fallback) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Remixicon Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.min.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">🍔</span>
+        Burger<span class="text-yellow">Town</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#combos">Combos</a>
+        <a href="#order">Order</a>
+        <a href="#contact">Location</a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <a href="checkout.html" class="cart-icon-btn" id="cartIconBtn" title="View Cart">
+          <i class="ri-shopping-cart-2-line"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+        <a href="checkout.html" class="btn btn-primary" id="navCTA">
+          <i class="ri-shopping-bag-line"></i> Checkout
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about">About Us</a>
+    <a href="#menu">Our Menu</a>
+    <a href="#combos">Combo Deals</a>
+    <a href="#order">How to Order</a>
+    <a href="#contact">Find Us</a>
+    <a href="#order" class="btn btn-primary" onclick="openWhatsApp()">
+      <i class="ri-whatsapp-line"></i> Order on WhatsApp
+    </a>
+  </div>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=1600&q=80" alt="Burger Town hero background">
+    </div>
+    <div class="hero-grain"></div>
+    <div class="hero-float hero-float-1"></div>
+    <div class="hero-float hero-float-2"></div>
+
+    <div class="container hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <i class="ri-map-pin-2-fill" style="color: var(--yellow);"></i>
+          <span>Now in Kuje, Abuja</span>
+        </div>
+        <h1 class="hero-title">
+          Crispy, Bold &<br><span class="highlight">Unforgettable</span><br>Flavour.
+        </h1>
+        <p class="hero-desc">
+          From our signature crispy golden fried chicken to loaded smash burgers and thick creamy shakes — Burger Town is Kuje's boldest fast-food experience.
+        </p>
+        <div class="hero-actions">
+          <a href="#order" class="btn btn-primary">
+            <i class="ri-whatsapp-line"></i> Order Now
+          </a>
+          <a href="#menu" class="btn btn-outline">
+            <i class="ri-restaurant-line"></i> View Menu
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80" alt="Premium smash burger with melted cheese">
+          <div class="hero-img-ring"></div>
+        </div>
+        <!-- Floating stats -->
+        <div class="hero-stat hero-stat-1">
+          <div class="hero-stat-icon">🍗</div>
+          <div class="hero-stat-text">
+            <strong>Crispy Chicken</strong>
+            <span>Golden & Crunchy</span>
+          </div>
+        </div>
+        <div class="hero-stat hero-stat-2">
+          <div class="hero-stat-icon">⭐</div>
+          <div class="hero-stat-text">
+            <strong>4.8 Rating</strong>
+            <span>Customer Favourite</span>
+          </div>
+        </div>
+        <div class="hero-stat hero-stat-3">
+          <div class="hero-stat-icon">🚀</div>
+          <div class="hero-stat-text">
+            <strong>30 Min</strong>
+            <span>Fast Delivery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURES BAR
+       ============================================================ -->
+  <div class="features-bar">
+    <div class="container">
+      <div class="features-inner">
+        <div class="feature-item reveal">
+          <div class="feature-icon"><i class="ri-timer-flash-line"></i></div>
+          <div class="feature-text">
+            <h4>Express Delivery</h4>
+            <p>30 minutes or less in Kuje</p>
+          </div>
+        </div>
+        <div class="feature-item reveal reveal-delay-1">
+          <div class="feature-icon"><i class="ri-leaf-line"></i></div>
+          <div class="feature-text">
+            <h4>Fresh Ingredients</h4>
+            <p>Daily sourced, never frozen</p>
+          </div>
+        </div>
+        <div class="feature-item reveal reveal-delay-2">
+          <div class="feature-icon"><i class="ri-shield-check-line"></i></div>
+          <div class="feature-text">
+            <h4>Certified Hygiene</h4>
+            <p>NAFDAC approved kitchen</p>
+          </div>
+        </div>
+        <div class="feature-item reveal reveal-delay-3">
+          <div class="feature-icon"><i class="ri-gift-line"></i></div>
+          <div class="feature-text">
+            <h4>Loyalty Rewards</h4>
+            <p>Buy 5 meals, get 1 free</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       ABOUT SECTION
+       ============================================================ -->
+  <section class="about section-pad" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-images reveal">
+          <div class="about-img-main">
+            <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=700&q=80" alt="Burger Town kitchen and preparation">
+          </div>
+          <div class="about-img-secondary">
+            <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=500&q=80" alt="Crispy fried chicken bucket">
+          </div>
+          <div class="about-experience">
+            <strong>100%</strong>
+            <span>Satisfaction</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="section-badge reveal">
+            <i class="ri-fire-line"></i> Our Story
+          </div>
+          <h2 class="section-title reveal reveal-delay-1">
+            Bold Flavours,<br>Born in <span class="text-yellow">Kuje</span>
+          </h2>
+          <p class="about-desc reveal reveal-delay-2">
+            Burger Town isn't just another fast-food spot — it's a movement. We were founded with one mission: to bring world-class crispy chicken, loaded burgers, and creamy shakes to the heart of Kuje, Abuja, at prices that make sense.
+          </p>
+          <p class="about-desc reveal reveal-delay-2">
+            Every piece of chicken is hand-battered with our secret 12-spice blend, every burger is smashed on a searing hot griddle, and every shake is blended thick enough to stand a straw in. We're not cutting corners — we're cutting patties.
+          </p>
+          <div class="about-highlights reveal reveal-delay-3">
+            <div class="about-highlight">
+              <i class="ri-fire-fill"></i>
+              <div class="about-highlight-text">
+                <h4>Flame-Grilled</h4>
+                <p>Real fire, real flavour</p>
+              </div>
+            </div>
+            <div class="about-highlight">
+              <i class="ri-hand-heart-line"></i>
+              <div class="about-highlight-text">
+                <h4>Hand-Crafted</h4>
+                <p>Made fresh per order</p>
+              </div>
+            </div>
+            <div class="about-highlight">
+              <i class="ri-price-tag-3-line"></i>
+              <div class="about-highlight-text">
+                <h4>Value Pricing</h4>
+                <p>Premium taste, fair price</p>
+              </div>
+            </div>
+            <div class="about-highlight">
+              <i class="ri-truck-line"></i>
+              <div class="about-highlight-text">
+                <h4>Free Delivery</h4>
+                <p>Orders above ₦5,000</p>
+              </div>
+            </div>
+          </div>
+          <a href="#menu" class="btn btn-dark reveal reveal-delay-4">
+            <i class="ri-restaurant-line"></i> Explore Our Menu
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MENU SECTION
+       ============================================================ -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="menu-header">
+        <div class="section-badge reveal">
+          <i class="ri-restaurant-2-line"></i> Our Menu
+        </div>
+        <h2 class="section-title reveal reveal-delay-1">
+          What's <span class="text-yellow">Cooking</span> Today?
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          Three pillars of flavour. Pick your fighter — crispy chicken, loaded burgers, or thick creamy shakes.
+        </p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="menu-tabs reveal">
+        <button class="menu-tab active" data-tab="chicken">
+          <i class="ri-restaurant-line"></i> Chicken Meals
+        </button>
+        <button class="menu-tab" data-tab="burgers">
+          <i class="ri-cake-2-line"></i> Burgers
+        </button>
+        <button class="menu-tab" data-tab="shakes">
+          <i class="ri-goblet-line"></i> Shakes & Creams
+        </button>
+        <button class="menu-tab" data-tab="sides">
+          <i class="ri-drinks-line"></i> Sides & Drinks
+        </button>
+      </div>
+
+      <!-- CHICKEN MEALS -->
+      <div class="menu-category active" data-category="chicken">
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&q=80" alt="Crispy golden fried chicken">
+            <span class="menu-card-badge">Bestseller</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>Crispy Golden Fried Chicken</h3>
+            <p>Hand-battered in our signature 12-spice blend, fried to a perfect golden crunch. Served with fries & coleslaw.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦3,500 <small>2-piece box meal</small></div>
+              <button class="menu-card-order" onclick="addToCart('Crispy Golden Fried Chicken', 3500, 'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&q=80', 'Hand-battered in our signature 12-spice blend.')" aria-label="Order Crispy Chicken"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&q=80" alt="Spicy chicken wings">
+            <span class="menu-card-badge">🔥 Spicy</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>Peri-Peri Chicken Wings</h3>
+            <p>6 crispy wings tossed in fiery peri-peri sauce with a hint of lemon. Not for the faint-hearted!</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦3,200 <small>6 wings + dip</small></div>
+              <button class="menu-card-order" onclick="addToCart('Peri-Peri Chicken Wings', 3200, 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&q=80', '6 crispy wings tossed in fiery peri-peri sauce.')" aria-label="Order Wings"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80" alt="Kentucky style chicken bucket">
+          </div>
+          <div class="menu-card-body">
+            <h3>Family Bucket (8pc)</h3>
+            <p>8 pieces of golden fried chicken, 2 large fries, coleslaw, and 4 drinks. Perfect for sharing with family.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦12,000 <small>feeds 3–4 people</small></div>
+              <button class="menu-card-order" onclick="addToCart('Family Bucket (8pc)', 12000, 'https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80', '8 pieces of golden fried chicken, 2 large fries, coleslaw, and 4 drinks.')" aria-label="Order Family Bucket"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1569691899455-88464f6d3ab1?w=600&q=80" alt="Chicken tenders">
+          </div>
+          <div class="menu-card-body">
+            <h3>Chicken Tenders & Strips</h3>
+            <p>Juicy chicken breast strips, lightly breaded and fried. Served with honey mustard or BBQ dip.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦2,800 <small>5 strips + dip</small></div>
+              <button class="menu-card-order" onclick="addToCart('Chicken Tenders & Strips', 2800, 'https://images.unsplash.com/photo-1619881590738-a111d176d936?w=600&q=80', 'Juicy chicken breast strips, lightly breaded and fried.')" aria-label="Order Tenders"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1513185158878-8d8c2a2a3da3?w=600&q=80" alt="Crispy chicken burger">
+          </div>
+          <div class="menu-card-body">
+            <h3>Crispy Chicken Burger</h3>
+            <p>Crispy fried chicken fillet on a toasted brioche bun with lettuce, pickles, and our signature sauce.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦3,800 <small>single fillet burger</small></div>
+              <button class="menu-card-order" onclick="addToCart('Crispy Chicken Burger', 3800, 'https://images.unsplash.com/photo-1513185158878-8d8c2a2a3da3?w=600&q=80', 'Crispy fried chicken fillet on a toasted brioche bun.')" aria-label="Order Chicken Burger"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=600&q=80" alt="Honey BBQ chicken">
+            <span class="menu-card-badge">New</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>Honey BBQ Drumsticks</h3>
+            <p>Glazed drumsticks slow-roasted in sweet honey barbecue sauce. Sticky, smoky, and absolutely addictive.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦3,000 <small>4 drumsticks</small></div>
+              <button class="menu-card-order" onclick="addToCart('Honey BBQ Drumsticks', 3000, 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=600&q=80', 'Glazed drumsticks slow-roasted in sweet honey barbecue sauce.')" aria-label="Order Drumsticks"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BURGERS -->
+      <div class="menu-category" data-category="burgers">
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="Classic smash burger">
+            <span class="menu-card-badge">Signature</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>Classic Smash Burger</h3>
+            <p>Double-smashed beef patties on a searing griddle, American cheese, pickles, onions, and our BT sauce on a brioche bun.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦4,000 <small>double smash</small></div>
+              <button class="menu-card-order" onclick="addToCart('Classic Smash Burger', 4000, 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80', 'Double-smashed beef patties on a searing griddle.')" aria-label="Order Smash Burger"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=600&q=80" alt="Cheeseburger">
+          </div>
+          <div class="menu-card-body">
+            <h3>Yellow Cheddar Cheeseburger</h3>
+            <p>Single beef patty loaded with melted yellow cheddar, crispy lettuce, tomato, and creamy mayo.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦3,200 <small>single patty</small></div>
+              <button class="menu-card-order" onclick="addToCart('Yellow Cheddar Cheeseburger', 3200, 'https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=600&q=80', 'Single beef patty loaded with melted yellow cheddar.')" aria-label="Order Cheeseburger"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&q=80" alt="BBQ bacon burger">
+            <span class="menu-card-badge">🔥 Popular</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>BBQ Bacon Burger</h3>
+            <p>Smoky beef patty with crispy bacon strips, caramelised onions, melted cheddar, and tangy BBQ glaze.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦4,500 <small>premium burger</small></div>
+              <button class="menu-card-order" onclick="addToCart('BBQ Bacon Burger', 4500, 'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&q=80', 'Smoky beef patty with crispy bacon strips, caramelised onions.')" aria-label="Order BBQ Burger"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80" alt="The Yellow Black Cream burger">
+            <span class="menu-card-badge">⭐ BT Special</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>The "Yellow Black Cream"</h3>
+            <p>Our signature branded burger: double patty, golden cheddar, black pepper crust, and creamy garlic aioli. A Burger Town exclusive.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦5,000 <small>BT exclusive</small></div>
+              <button class="menu-card-order" onclick="addToCart('The Yellow Black Cream', 5000, 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80', 'Double patty, golden cheddar, black pepper crust and creamy garlic aioli.')" aria-label="Order Signature Burger"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&q=80" alt="Veggie burger">
+          </div>
+          <div class="menu-card-body">
+            <h3>Veggie Plant Burger</h3>
+            <p>100% plant-based patty with fresh avocado, roasted peppers, lettuce, and vegan mayo on a whole wheat bun.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦3,500 <small>plant-based</small></div>
+              <button class="menu-card-order" onclick="addToCart('Veggie Plant Burger', 3500, 'https://images.unsplash.com/photo-1520072959219-c595e6cdc2d2?w=600&q=80', '100% plant-based patty with fresh avocado, roasted peppers.')" aria-label="Order Veggie Burger"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=600&q=80" alt="Suya spiced burger">
+            <span class="menu-card-badge">🇳🇬 Naija</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>Suya-Spiced Beef Burger</h3>
+            <p>Nigerian fusion: beef patty rubbed with suya spice, topped with sliced onions, tomato, and yaji pepper sauce.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦4,200 <small>naija special</small></div>
+              <button class="menu-card-order" onclick="addToCart('Suya-Spiced Beef Burger', 4200, 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&q=80', 'Beef patty rubbed with suya spice, topped with sliced onions and tomato.')" aria-label="Order Suya Burger"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SHAKES & CREAMS -->
+      <div class="menu-category" data-category="shakes">
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&q=80" alt="Chocolate milkshake">
+            <span class="menu-card-badge">Bestseller</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>Thick Chocolate Shake</h3>
+            <p>Rich Belgian chocolate blended with vanilla ice cream and whole milk. Topped with whipped cream and cocoa dust.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦2,500 <small>large cup</small></div>
+              <button class="menu-card-order" onclick="addToCart('Thick Chocolate Shake', 2500, 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&q=80', 'Rich Belgian chocolate blended with vanilla ice cream and whole milk.')" aria-label="Order Chocolate Shake"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=600&q=80" alt="Strawberry milkshake">
+          </div>
+          <div class="menu-card-body">
+            <h3>Strawberry Dream Shake</h3>
+            <p>Fresh strawberries blended with creamy vanilla base and a swirl of strawberry syrup. Bright, fresh, and indulgent.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦2,500 <small>large cup</small></div>
+              <button class="menu-card-order" onclick="addToCart('Strawberry Dream Shake', 2500, 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=600&q=80', 'Fresh strawberries blended with creamy vanilla base.')" aria-label="Order Strawberry Shake"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=600&q=80" alt="Vanilla caramel shake">
+          </div>
+          <div class="menu-card-body">
+            <h3>Vanilla Caramel Shake</h3>
+            <p>Smooth vanilla ice cream swirled with golden caramel sauce and crushed biscuit crumbs.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦2,500 <small>large cup</small></div>
+              <button class="menu-card-order" onclick="addToCart('Vanilla Caramel Shake', 2500, 'https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=600&q=80', 'Smooth vanilla ice cream swirled with golden caramel sauce.')" aria-label="Order Caramel Shake"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80" alt="Ice cream sundae">
+            <span class="menu-card-badge">Indulgent</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>Butterscotch Sundae</h3>
+            <p>Scoops of vanilla and chocolate ice cream drizzled with warm butterscotch, whipped cream, and sprinkles.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦2,000 <small>sundae cup</small></div>
+              <button class="menu-card-order" onclick="addToCart('Butterscotch Sundae', 2000, 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80', 'Vanilla and chocolate ice cream drizzled with warm butterscotch.')" aria-label="Order Sundae"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1546039907-7fa05f864c02?w=600&q=80" alt="Mango smoothie">
+          </div>
+          <div class="menu-card-body">
+            <h3>Mango Paradise Smoothie</h3>
+            <p>Ripe Nigerian mangoes blended with yogurt and a touch of honey. Creamy, tropical, and refreshing.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦2,200 <small>fresh blend</small></div>
+              <button class="menu-card-order" onclick="addToCart('Mango Paradise Smoothie', 2200, 'https://images.unsplash.com/photo-1546039907-7fa05f864c02?w=600&q=80', 'Ripe Nigerian mangoes blended with yogurt and a touch of honey.')" aria-label="Order Smoothie"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1570197571499-166b36435e9f?w=600&q=80" alt="Ice cream float">
+            <span class="menu-card-badge">Fun</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>Classic Cola Float</h3>
+            <p>A generous scoop of vanilla ice cream dropped into ice-cold cola. Fizzy, creamy, and nostalgic.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦1,800 <small>float glass</small></div>
+              <button class="menu-card-order" onclick="addToCart('Classic Cola Float', 1800, 'https://images.unsplash.com/photo-1570197571499-166b36435e9f?w=600&q=80', 'A scoop of vanilla ice cream dropped into ice-cold cola. Fizzy and creamy.')" aria-label="Order Float"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDES & DRINKS -->
+      <div class="menu-category" data-category="sides">
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=600&q=80" alt="Crispy french fries">
+          </div>
+          <div class="menu-card-body">
+            <h3>Golden Crispy Fries</h3>
+            <p>Perfectly seasoned, golden and crispy on the outside, fluffy inside. Our customers' favourite side.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦1,200 <small>regular / ₦1,800 large</small></div>
+              <button class="menu-card-order" onclick="addToCart('Golden Crispy Fries', 1200, 'https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=600&q=80', 'Golden and crispy on the outside, fluffy inside.')" aria-label="Order Fries"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?w=600&q=80" alt="Onion rings">
+          </div>
+          <div class="menu-card-body">
+            <h3>Crunchy Onion Rings</h3>
+            <p>Thick-cut onion rings dipped in seasoned batter and fried to a satisfying crunch. Served with ranch dip.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦1,500 <small>8 rings + dip</small></div>
+              <button class="menu-card-order" onclick="addToCart('Crunchy Onion Rings', 1500, 'https://images.unsplash.com/photo-1639024471283-03518883512d?w=600&q=80', 'Thick-cut onion rings fried to a satisfying crunch.')" aria-label="Order Onion Rings"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1625938145744-e380515399bf?w=600&q=80" alt="Fried plantains">
+            <span class="menu-card-badge">🇳🇬 Naija</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>Sweet Fried Plantains (Dodo)</h3>
+            <p>Ripe plantains fried to caramelised perfection. A beloved Nigerian classic that pairs with everything.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦800 <small>side portion</small></div>
+              <button class="menu-card-order" onclick="openWhatsApp('Fried Plantains (Dodo)')" aria-label="Order Plantains"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=600&q=80" alt="Soft drinks and beverages">
+          </div>
+          <div class="menu-card-body">
+            <h3>Soft Drinks & Water</h3>
+            <p>Coca-Cola, Fanta, Sprite, Pepsi, Malta Guinness, bottled water. Cold and refreshing, always.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦500 <small>per bottle / can</small></div>
+              <button class="menu-card-order" onclick="openWhatsApp('Soft Drink')" aria-label="Order Drinks"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80" alt="Zobo and Kunu drinks">
+            <span class="menu-card-badge">🇳🇬 Naija</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>Zobo & Kunu</h3>
+            <p>Chilled homemade Zobo (hibiscus punch) and Kunu (millet drink). Authentic Nigerian refreshment.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦700 <small>per cup</small></div>
+              <button class="menu-card-order" onclick="openWhatsApp('Zobo / Kunu Drink')" aria-label="Order Zobo"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600&q=80" alt="Jollof rice with chicken">
+            <span class="menu-card-badge">⭐ Fusion</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>Jollof Rice & Fried Chicken</h3>
+            <p>Nigerian party-style jollof rice paired with our crispy golden fried chicken. A taste of home at Burger Town.</p>
+            <div class="menu-card-footer">
+              <div class="menu-card-price">₦3,500 <small>rice + 2pc chicken</small></div>
+              <button class="menu-card-order" onclick="openWhatsApp('Jollof Rice & Fried Chicken')" aria-label="Order Jollof"><i class="ri-shopping-bag-line"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMBO DEALS
+       ============================================================ -->
+  <section class="combos section-pad" id="combos">
+    <div class="container">
+      <div class="combos-header">
+        <div class="section-badge reveal">
+          <i class="ri-vip-crown-line"></i> Value Deals
+        </div>
+        <h2 class="section-title reveal reveal-delay-1">
+          Combo <span class="text-yellow">Deals</span> That Slap
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2" style="margin: 0 auto;">
+          More food, less spend. Our combo meals are designed to give you maximum flavour at unbeatable value.
+        </p>
+      </div>
+
+      <div class="combos-grid">
+        <!-- Combo 1 -->
+        <div class="combo-card reveal">
+          <div class="combo-img">
+            <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=600&q=80" alt="Kuje Classic Combo">
+          </div>
+          <div class="combo-body">
+            <h3>Kuje Classic Combo</h3>
+            <p>Our entry-level combo — perfect for a quick, satisfying meal on the go.</p>
+            <ul class="combo-includes">
+              <li><i class="ri-check-line"></i> 1 Classic Smash Burger</li>
+              <li><i class="ri-check-line"></i> Regular Fries</li>
+              <li><i class="ri-check-line"></i> Soft Drink (Can)</li>
+            </ul>
+            <div class="combo-footer">
+              <div class="combo-price">₦3,500 <small>Save ₦700</small></div>
+              <button class="btn btn-primary" onclick="openWhatsApp('Kuje Classic Combo')">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Combo 2 — Featured -->
+        <div class="combo-card featured reveal reveal-delay-1">
+          <div class="combo-img">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80" alt="Yellow Black Cream Combo">
+          </div>
+          <div class="combo-body">
+            <h3>Yellow Black Cream Combo</h3>
+            <p>The full Burger Town experience — our signature burger with a shake upgrade.</p>
+            <ul class="combo-includes">
+              <li><i class="ri-check-line"></i> 1 "Yellow Black Cream" Burger</li>
+              <li><i class="ri-check-line"></i> Large Fries</li>
+              <li><i class="ri-check-line"></i> Thick Chocolate Shake</li>
+              <li><i class="ri-check-line"></i> 3 Onion Rings (bonus)</li>
+            </ul>
+            <div class="combo-footer">
+              <div class="combo-price">₦5,000 <small>Save ₦1,500</small></div>
+              <button class="btn btn-primary" onclick="openWhatsApp('Yellow Black Cream Combo')">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Combo 3 -->
+        <div class="combo-card reveal reveal-delay-2">
+          <div class="combo-img">
+            <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&q=80" alt="Chicken Family Feast">
+          </div>
+          <div class="combo-body">
+            <h3>Chicken Family Feast</h3>
+            <p>Feed the whole family with a bucket of our famous crispy golden fried chicken.</p>
+            <ul class="combo-includes">
+              <li><i class="ri-check-line"></i> 8-Piece Chicken Bucket</li>
+              <li><i class="ri-check-line"></i> 2 Large Fries</li>
+              <li><i class="ri-check-line"></i> Coleslaw Tub</li>
+              <li><i class="ri-check-line"></i> 4 Soft Drinks</li>
+            </ul>
+            <div class="combo-footer">
+              <div class="combo-price">₦12,000 <small>Save ₦3,000</small></div>
+              <button class="btn btn-primary" onclick="openWhatsApp('Chicken Family Feast - 8pc')">Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HOW TO ORDER
+       ============================================================ -->
+  <section class="ordering" id="order">
+    <div class="ordering-bg-pattern"></div>
+    <div class="container">
+      <div class="ordering-grid">
+        <div class="ordering-text">
+          <div class="section-badge reveal">
+            <i class="ri-shopping-cart-line"></i> How to Order
+          </div>
+          <h2 class="section-title reveal reveal-delay-1">
+            Getting Your<br>Food is <span class="text-yellow">Easy</span>
+          </h2>
+          <p class="section-subtitle reveal reveal-delay-2">
+            Whether you want it delivered to your door or ready for pickup, we've got you covered with multiple ordering channels.
+          </p>
+
+          <div class="ordering-methods reveal reveal-delay-3">
+            <a href="https://wa.me/2348000000000?text=Hello%20Burger%20Town!%20I'd%20like%20to%20place%20an%20order." target="_blank" class="order-method">
+              <div class="order-method-icon">💬</div>
+              <div>
+                <h4>WhatsApp Order</h4>
+                <p>Message us directly — fastest way to order</p>
+              </div>
+            </a>
+            <div class="order-method">
+              <div class="order-method-icon">📱</div>
+              <div>
+                <h4>Call Us</h4>
+                <p>Ring our hotline: +234 800 000 0000</p>
+              </div>
+            </div>
+            <div class="order-method">
+              <div class="order-method-icon">🛵</div>
+              <div>
+                <h4>Delivery Apps</h4>
+                <p>Find us on Glovo, Bolt Food & Chowdeck</p>
+              </div>
+            </div>
+            <div class="order-method">
+              <div class="order-method-icon">🏪</div>
+              <div>
+                <h4>Walk-in & Takeaway</h4>
+                <p>Visit our Kuje location — dine in or grab & go</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ordering-visual reveal">
+          <div class="ordering-phone">
+            <div class="ordering-phone-notch"></div>
+            <div class="ordering-phone-screen">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80" alt="Order on your phone">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS
+       ============================================================ -->
+  <section class="testimonials section-pad" id="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <div class="section-badge reveal">
+          <i class="ri-chat-smile-3-line"></i> Reviews
+        </div>
+        <h2 class="section-title reveal reveal-delay-1">
+          What Our <span class="text-yellow">Customers</span> Say
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2" style="margin: 0 auto;">
+          Don't take our word for it — hear from the people who keep coming back for more.
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <i class="ri-double-quotes-r testimonial-quote-icon"></i>
+          <div class="testimonial-stars">
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          </div>
+          <blockquote>
+            "The crispy chicken here is unreal — it's even better than the big chains. And the prices? Absolutely fair. My family orders every weekend now."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AO</div>
+            <div class="testimonial-info">
+              <strong>Adebayo O.</strong>
+              <span>Kuje resident</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-1">
+          <i class="ri-double-quotes-r testimonial-quote-icon"></i>
+          <div class="testimonial-stars">
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          </div>
+          <blockquote>
+            "I tried the Yellow Black Cream burger and it's officially my favourite burger in Abuja. The shake combo is a must-try. Burger Town understood the assignment."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">FI</div>
+            <div class="testimonial-info">
+              <strong>Fatima I.</strong>
+              <span>Food blogger</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2">
+          <i class="ri-double-quotes-r testimonial-quote-icon"></i>
+          <div class="testimonial-stars">
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-star-fill"></i>
+          </div>
+          <blockquote>
+            "Ordered via WhatsApp and it arrived in 25 minutes — still hot and perfectly packaged. The Suya-Spiced Burger is a game changer. Proper Naija twist!"
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">CE</div>
+            <div class="testimonial-info">
+              <strong>Chinedu E.</strong>
+              <span>Loyal customer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT / LOCATION
+       ============================================================ -->
+  <section class="contact section-pad" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-badge reveal">
+            <i class="ri-map-pin-2-line"></i> Find Us
+          </div>
+          <h2 class="section-title reveal reveal-delay-1">
+            Come Say <span class="text-yellow">Hello</span>
+          </h2>
+          <p class="section-subtitle reveal reveal-delay-2">
+            We're right in the heart of Kuje. Stop by for a meal, or let us bring it to you — wherever you are.
+          </p>
+
+          <div class="contact-info-cards">
+            <div class="contact-card reveal reveal-delay-2">
+              <div class="contact-card-icon"><i class="ri-map-pin-2-fill"></i></div>
+              <div>
+                <h4>Our Address</h4>
+                <p>Burger Town, AZMAN Filling Station, Shadadi Road,<br>Kuje 900105, Federal Capital Territory</p>
+              </div>
+            </div>
+            <div class="contact-card reveal reveal-delay-3">
+              <div class="contact-card-icon"><i class="ri-time-line"></i></div>
+              <div>
+                <h4>Opening Hours</h4>
+                <p>Monday – Saturday: 10am – 10pm<br>Sunday: 12pm – 9pm</p>
+              </div>
+            </div>
+            <div class="contact-card reveal reveal-delay-3">
+              <div class="contact-card-icon"><i class="ri-phone-fill"></i></div>
+              <div>
+                <h4>Phone / WhatsApp</h4>
+                <p><a href="tel:+2348000000000">+234 800 000 0000</a></p>
+              </div>
+            </div>
+            <div class="contact-card reveal reveal-delay-4">
+              <div class="contact-card-icon"><i class="ri-mail-fill"></i></div>
+              <div>
+                <h4>Email</h4>
+                <p><a href="mailto:hello@burgertown.ng">hello@burgertown.ng</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-map reveal">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31527.62123456789!2d7.2186!3d8.8797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e6f50b4c43c35%3A0x9e0b1c5e1a2b3c4d!2sKuje%2C%20Abuja!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Burger Town Location - Kuje, Abuja">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <span class="logo-icon">🍔</span>
+            Burger<span class="text-yellow">Town</span>
+          </a>
+          <p>Bold flavours born in Kuje. Crispy golden fried chicken, loaded smash burgers, and thick creamy shakes — made fresh, served fast, priced fair.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+            <a href="#" class="footer-social" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+            <a href="#" class="footer-social" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
+            <a href="#" class="footer-social" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about"><i class="ri-arrow-right-s-line"></i> About Us</a></li>
+            <li><a href="#menu"><i class="ri-arrow-right-s-line"></i> Full Menu</a></li>
+            <li><a href="#combos"><i class="ri-arrow-right-s-line"></i> Combo Deals</a></li>
+            <li><a href="#order"><i class="ri-arrow-right-s-line"></i> How to Order</a></li>
+            <li><a href="#contact"><i class="ri-arrow-right-s-line"></i> Find Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Menu Highlights</h4>
+          <ul>
+            <li><a href="#menu"><i class="ri-arrow-right-s-line"></i> Crispy Chicken</a></li>
+            <li><a href="#menu"><i class="ri-arrow-right-s-line"></i> Smash Burgers</a></li>
+            <li><a href="#menu"><i class="ri-arrow-right-s-line"></i> Shakes & Creams</a></li>
+            <li><a href="#menu"><i class="ri-arrow-right-s-line"></i> Nigerian Fusion</a></li>
+            <li><a href="#combos"><i class="ri-arrow-right-s-line"></i> Family Buckets</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Order Channels</h4>
+          <ul>
+            <li><a href="https://wa.me/2348000000000" target="_blank"><i class="ri-whatsapp-line"></i> WhatsApp</a></li>
+            <li><a href="tel:+2348000000000"><i class="ri-phone-line"></i> Phone Order</a></li>
+            <li><a href="#"><i class="ri-riding-line"></i> Glovo</a></li>
+            <li><a href="#"><i class="ri-riding-line"></i> Bolt Food</a></li>
+            <li><a href="#"><i class="ri-store-2-line"></i> Walk-in</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear">2026</span> Burger Town, Kuje, Abuja. All rights reserved.</p>
+        <p>Crafted with 🍔 &amp; ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="cart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
